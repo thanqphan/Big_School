@@ -27,6 +27,7 @@ namespace PhanAnhThang_2011069025_projectB.Controllers
         }
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]//ktr notice ma cho user khop vs ma ban dau hay kh -0:er400
         public ActionResult Create(CourseViewModel viewModel)
         {
             if (!ModelState.IsValid)
@@ -36,14 +37,14 @@ namespace PhanAnhThang_2011069025_projectB.Controllers
             }
             var sourse = new Course
             {
-                LecturerId = User.Identity.GetUserId(),
+                LecturerId = User.Identity.GetUserId(),//get ID User using, return chuoi_string 
                 DateTime = viewModel.GetDateTime(),
                 CategoryId = viewModel.Category,
                 Place = viewModel.Place
             };
             _dbContext.Course.Add(sourse);
             _dbContext.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home");//chuyen huong den Index thuoc /Home/Index
         }
     }
 }

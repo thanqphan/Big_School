@@ -14,7 +14,7 @@ namespace PhanAnhThang_2011069025_projectB.ViewModels
             DateTime dateTime;
             var isValid = DateTime.TryParseExact(Convert.ToString(value),
                             "HH:mm",
-                            CultureInfo.CurrentCulture,
+                            CultureInfo.CurrentCulture,//in4 about languega,number,datetime, related to culture
                             DateTimeStyles.None,
                             out dateTime);
             return isValid;

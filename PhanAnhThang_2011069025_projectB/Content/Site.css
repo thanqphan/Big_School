@@ -28,3 +28,41 @@ textarea {
     background-color: #777;
     border-color: #fff
 }
+
+/*Override thead default Bootstrap nar var*/
+.navbar-inverse {
+    background-color: #a3c6da;
+    border-color: #337ab7;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    color: black;
+}
+
+.navbar-inverse .navbar-brand{
+    color: black;
+}
+
+/*Course layout*/
+.course{
+    list-style:none
+}
+
+.course > li{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.course > li .date{
+    text-align:center;
+    background-color: antiquewhite;
+    color: black;
+    width: 60px;
+    border-radius: 8px;
+}
+
+.course > li .details{
+    position:absolute;
+    top:0;
+    left:70px;
+}
