@@ -9,6 +9,7 @@ namespace PhanAnhThang_2011069025_projectB.ViewModels
 {
     public class CourseViewModel
     {
+        public int Id { get; set; }
         [Required]
         public string Place
         {
@@ -26,6 +27,11 @@ namespace PhanAnhThang_2011069025_projectB.ViewModels
         public DateTime GetDateTime()
         {
             return DateTime.Parse(string.Format("{0} {1}", Date, Time));
+        }
+        public string Heading { get; set; }
+        public string Action
+        {
+            get { return (Id != 0) ? "Update" : "Create"; }
         }
     }
 }
